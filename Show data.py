@@ -6,7 +6,7 @@ import requests
 
 try:
 
-    for x in range(1,51):
+    for x in range(1,51): #number of pages
 
         link_for_scraping='https://books.toscrape.com/catalogue/page-{}.html'
         result = requests.get(link_for_scraping.format(x))
@@ -23,7 +23,7 @@ try:
             price = i.select('.price_color')[0].text
             availablity = i.select('.instock.availability')[0].text
 
-            print(title," | ",price," | ",availablity.strip()) #added strip bc too much whitespaces
+            print(title," | ",price," | ",availablity.strip()) #too many whitespaces
             
             
         print(f'End of page {x}')
